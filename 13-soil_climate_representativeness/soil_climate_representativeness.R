@@ -5,7 +5,6 @@ if (!require('ggplot2')) install.packages("ggplot2")
 if (!require('dplyr')) install.packages("dplyr")
 if (!require('tidyr')) install.packages("tidyr")
 if (!require('knitr')) install.packages("knitr")
-if (!require('kableExtra')) install.packages("kableExtra")
 
 library(terra)
 library(geodata)
@@ -13,8 +12,6 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(knitr)
-library(kableExtra)
-library(dplyr)
 
 path = "Data"
 
@@ -431,10 +428,5 @@ coverage_summary_t %>%
   knitr::kable(
     digits = 2,
     booktabs = TRUE,
-    caption = "Harvested area coverage by environmental dimension") %>%
-  kableExtra::kable_styling(
-    latex_options = "striped",
-    font_size = 10,
-    position = "center") %>%
-  kableExtra::column_spec(1, bold = TRUE)
+    caption = "Harvested area coverage by environmental dimension")
 
