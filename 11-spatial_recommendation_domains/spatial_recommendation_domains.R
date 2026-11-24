@@ -31,6 +31,7 @@ library(kableExtra)
 library(MASS)
 library(cluster)
 
+path = "Data"
 set.seed(123)
 
 
@@ -145,7 +146,7 @@ eigenvalues = data.frame(
   eigenvalue = pca$eig,
   axis = paste0("Axis", seq_along(pca$eig)))
 
-initial_eigenvalues %>%
+eigenvalues %>%
   knitr::kable(
     digits = 3,
     booktabs = TRUE,
@@ -168,7 +169,7 @@ fviz_pca_var(
     midpoint = 9) +
   theme_minimal()
 
-fviz_pca_ind(pca_initial)
+fviz_pca_ind(pca)
 
 
 ## ----fig.width=9, fig.height=7-----------------------------------------------------------
@@ -181,7 +182,7 @@ names(pc_raster) = c("pc1", "pc2", "pc3", "pc4")
 plot(pc_raster)
 
 
-## ----------------------------------------------------------------------------------------
+## ----fig.width=8, fig.height=6, dpi=300--------------------------------------------------
 pc_scores = pca$li
 
 hclust_model = hclust(
@@ -197,7 +198,7 @@ plot(
   sub = "")
 
 
-## ----------------------------------------------------------------------------------------
+## ----fig.width=8, fig.height=6, dpi=300--------------------------------------------------
 k_values = 3:10
 sil_width = numeric(length(k_values))
 
@@ -304,7 +305,7 @@ ggplot() +
     style = north_arrow_fancy_orienteering())
 
 
-## ----------------------------------------------------------------------------------------
+## ----fig.width=8, fig.height=6, dpi=300--------------------------------------------------
 set.seed(123)
 
 importance_stack = c(domain_raster, indicator_stack)
