@@ -1,8 +1,6 @@
 
 # GENERATING QR CODES FOR FARMS/TRIALS AND PLOTS/TREATMENTS---------------------
 
-rm(list = ls())
-
 if (!require('baRcodeR')) install.packages("baRcodeR")
 
 library(baRcodeR)
