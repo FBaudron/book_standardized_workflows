@@ -2,14 +2,12 @@
 if (!require('openxlsx')) install.packages("openxlsx")
 if (!require('cluster')) install.packages("cluster")
 if (!require('gtsummary')) install.packages("gtsummary")
-if (!require('kableExtra')) install.packages("kableExtra")
 if (!require('splitstackshape')) install.packages("splitstackshape")
 if (!require('randomForest')) install.packages("randomForest")
 
 library(openxlsx)
 library(cluster)
 library(gtsummary)
-library(kableExtra)
 library(splitstackshape)
 library(randomForest)
 
@@ -308,10 +306,7 @@ data[, -c(1:3)] %>%
                  offtake ~  "Total livestock offtake (TLU/yr)"))%>%
   add_p(test = list(all_continuous() ~ "kruskal.test",
                     all_categorical() ~ "chisq.test"))%>%
-  add_overall()%>%
-  as_kable(format = "latex", booktabs = TRUE, longtable = TRUE)%>%
-  kable_styling(latex_options = c("scale_down","repeat_header"), font_size = 6)%>%
-  landscape()
+  add_overall()
 
 
 ## ----------------------------------------------------------------------------------------
@@ -346,26 +341,12 @@ colnames(farm_table) <- paste0(
 
 knitr::kable(
   farm_table,
-  format = "latex",
-  booktabs = TRUE,
+  format = "html",
   row.names = TRUE,
   col.names = c("", colnames(farm_table)),
   caption = "Characteristics of the most representative farms",
   align = "lccc",
-  escape = TRUE) %>%
-  kableExtra::kable_styling(
-    latex_options = "hold_position",
-    position = "center",
-    font_size = 8,
-    full_width = FALSE) %>%
-  kableExtra::column_spec(
-    1,
-    width = "5cm",
-    bold = FALSE) %>%
-  kableExtra::row_spec(
-    0,
-    bold = TRUE)
-
+  escape = TRUE) 
 
 ## ----------------------------------------------------------------------------------------
 sample1 = as.data.frame(stratified(data, "type", 30/nrow(data)))
