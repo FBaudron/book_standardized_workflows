@@ -343,7 +343,7 @@ ggplot(climate_area,
     limits = c(0.5, n_intervals + 0.5)) +
   scale_fill_gradient(
     low = "white", high = "darkgreen",
-    name = "Share of harvested\\narea (%)") +
+    name = "Share of harvested\narea (%)") +
   coord_fixed() +
   labs(
     x = "Mean annual temperature (°C)",
@@ -371,7 +371,7 @@ ggplot(soil_area,
     limits = c(0.5, n_intervals + 0.5)) +
   scale_fill_gradient(
     low = "white", high = "darkgreen",
-    name = "Share of harvested\\narea (%)") +
+    name = "Share of harvested\narea (%)") +
   coord_fixed() +
   labs(
     x = "Plant-available water capacity (mm)",
