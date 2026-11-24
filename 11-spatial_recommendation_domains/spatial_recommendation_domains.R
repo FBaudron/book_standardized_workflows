@@ -11,7 +11,6 @@ if (!require('randomForest')) install.packages("randomForest")
 if (!require('ggspatial')) install.packages("ggspatial")
 if (!require('tidyterra')) install.packages("tidyterra")
 if (!require('knitr')) install.packages("knitr")
-if (!require('kableExtra')) install.packages("kableExtra")
 if (!require('MASS')) install.packages("MASS")
 if (!require('cluster')) install.packages("cluster")
 
@@ -27,7 +26,6 @@ library(randomForest)
 library(ggspatial)
 library(tidyterra)
 library(knitr)
-library(kableExtra)
 library(MASS)
 library(cluster)
 
@@ -354,24 +352,14 @@ kableExtra::landscape(
     knitr::kable(
       digits = 2,
       booktabs = TRUE,
-      caption = "Mean indicator values by spatial domain") %>%
-    kableExtra::kable_styling(
-      latex_options = "striped",
-      font_size = 10,
-      position = "center") %>%
-    kableExtra::column_spec(1, bold = TRUE))
+      caption = "Mean indicator values by spatial domain")
 
 kableExtra::landscape(
   domain_sds %>%
     knitr::kable(
       digits = 2,
       booktabs = TRUE,
-      caption = "Standard deviations of indicators by spatial domain") %>%
-    kableExtra::kable_styling(
-      latex_options = "striped",
-      font_size = 10,
-      position = "center") %>%
-    kableExtra::column_spec(1, bold = TRUE))
+      caption = "Standard deviations of indicators by spatial domain")
 
 
 ## ----fig.width=9, fig.height=7-----------------------------------------------------------
@@ -461,12 +449,7 @@ area_by_domain %>%
   knitr::kable(
     digits = 0,
     booktabs = TRUE,
-    caption = "Geographical and cropland areas by recommendation domain") %>%
-  kableExtra::kable_styling(
-    latex_options = "striped",
-    font_size = 10,
-    position = "center") %>%
-  kableExtra::column_spec(1, bold = TRUE)
+    caption = "Geographical and cropland areas by recommendation domain")
 
 
 ## ----------------------------------------------------------------------------------------
@@ -484,10 +467,5 @@ population_by_domain %>%
   knitr::kable(
     digits = 0,
     booktabs = TRUE,
-    caption = "Rural population by recommendation domain") %>%
-  kableExtra::kable_styling(
-    latex_options = "striped",
-    font_size = 10,
-    position = "center") %>%
-  kableExtra::column_spec(1, bold = TRUE)
+    caption = "Rural population by recommendation domain")
 
