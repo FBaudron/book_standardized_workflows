@@ -395,10 +395,5 @@ combined_reach_summary_t %>%
     digits = 2,
     booktabs = TRUE,
     col.names = c("Indicator", "Value"),
-    caption = "Cropland and rural population within the combined reach area") %>%
-  kableExtra::kable_styling(
-    latex_options = "striped",
-    font_size = 10,
-    position = "center") %>%
-  kableExtra::column_spec(1, bold = TRUE)
+    caption = "Cropland and rural population within the combined reach area")
 
