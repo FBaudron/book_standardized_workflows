@@ -31,7 +31,6 @@ library(kableExtra)
 library(MASS)
 library(cluster)
 
-path = "Data"
 set.seed(123)
 
 
