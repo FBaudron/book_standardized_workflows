@@ -670,19 +670,8 @@ gtsummary::tbl_summary(
   gtsummary::modify_caption(
     "**Farm-level ENA indicators by district × farm type**"
   ) %>%
-  gtsummary::bold_labels() %>%
-    gtsummary::as_kable_extra(
-    format = "latex",
-    booktabs = TRUE,
-    longtable = TRUE
-  ) %>%
-  kableExtra::kable_styling(
-    latex_options = "repeat_header",
-    font_size = 6,
-    position = "center"
-  ) %>%
-  kableExtra::column_spec(1, width = "5cm") %>%
-  kableExtra::landscape()
+  gtsummary::bold_labels() 
+  
 
 
 ## ----ena-output-11, message=FALSE, warning=FALSE-----------------------------------------
