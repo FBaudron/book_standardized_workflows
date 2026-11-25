@@ -149,11 +149,7 @@ eigenvalues %>%
     digits = 3,
     booktabs = TRUE,
     col.names = c("Eigenvalue", "Principal component"),
-    caption = "Eigenvalues of the initial PCA") %>%
-  kableExtra::kable_styling(
-    latex_options = "striped",
-    font_size = 9,
-    position = "center")
+    caption = "Eigenvalues of the initial PCA")
 
 
 ## ----------------------------------------------------------------------------------------
