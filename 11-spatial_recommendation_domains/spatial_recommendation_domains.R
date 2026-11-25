@@ -343,15 +343,13 @@ domain_sds = zonal(
   fun = "sd",
   na.rm = TRUE)
 
-kableExtra::landscape(
-  domain_means %>%
+domain_means %>%
     knitr::kable(
       digits = 2,
       booktabs = TRUE,
       caption = "Mean indicator values by spatial domain")
 
-kableExtra::landscape(
-  domain_sds %>%
+domain_sds %>%
     knitr::kable(
       digits = 2,
       booktabs = TRUE,
