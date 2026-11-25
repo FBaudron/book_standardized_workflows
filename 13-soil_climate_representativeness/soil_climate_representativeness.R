@@ -61,10 +61,13 @@ sites_cropmask = project(sites, crs(cropmask))
 
 
 ## ----fig.width=9, fig.height=7-----------------------------------------------------------
+# Log-transformed maize area
+maize_harvested_area_log = log1p(maize_harvested_area)
+
 plot(
-  maize_harvested_area,
+  maize_harvested_area_log,
   col = rev(hcl.colors(7, "YlOrRd")),
-  main = "Maize harvested area and field sites",
+  main = "Maize harvested area (log scale) and field sites",
   plg = list(title = "Harvested area\n(ha per cell)"))
 plot(ssa, add = T)
 plot(sites_cropmask, add = T, pch = 21, bg = "green", col = "black", cex = 0.8)
